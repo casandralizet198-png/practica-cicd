@@ -7,9 +7,9 @@ trigger:
 
 variables:
   # Cambia esto por el nombre real de tu App Service (Paso 3)
-  webAppName: 'nombre-de-tu-app-service'
+  webAppName: 'practica-cicd-casandra'
   # Cambia esto por el nombre de la Service Connection creada en Paso 3
-  azureSubscription: 'nombre-de-tu-service-connection'
+  azureSubscription: 'Conexión-azure-práctica'
 
 stages:
 
@@ -25,7 +25,7 @@ stages:
       steps:
         - task: NodeTool@0
           inputs:
-            versionSpec: '18.x'
+            versionSpec: '22.x'
           displayName: 'Instalar Node.js'
 
         - script: |
@@ -77,5 +77,5 @@ stages:
                   appType: 'webAppLinux'
                   appName: '$(webAppName)'
                   package: '$(Pipeline.Workspace)/drop/app.zip'
-                  runtimeStack: 'NODE|18-lts'
+                  runtimeStack: 'NODE|22-lts'
                 displayName: 'Desplegar en Azure App Service'
