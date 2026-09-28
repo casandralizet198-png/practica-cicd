@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 // Ruta principal - "letrero" inicial de la app
 app.get('/', (req, res) => {
-  res.status(200).send('Hola! Esta es mi app de CI/CD - Version 1');
+  res.status(200).send('Hola! Esta es mi app de CI/CD - Version 2 ACTUALIZADA');
 });
 
 // Ruta de salud, util para probar que el App Service esta vivo
