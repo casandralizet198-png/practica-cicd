@@ -6,9 +6,9 @@ trigger:
       - main
 
 variables:
-  # Cambia esto por el nombre real de tu App Service (Paso 3)
+ 
   webAppName: 'practica-cicd-casandra'
-  # Cambia esto por el nombre de la Service Connection creada en Paso 3
+
   azureSubscription: 'conexion-azure-practica'
 
 stages:
