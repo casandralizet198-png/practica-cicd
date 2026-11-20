@@ -6,10 +6,11 @@ trigger:
       - main
 
 variables:
-
-  webAppName: 'practica-cicd-casandra'
-
-  azureSubscription: 'conexion-azure-practica'
+  - group: kv-secrets
+  - name: webAppName
+    value: 'practica-cicd-casandra'
+  - name: azureSubscription
+    value: 'conexion-azure-practica'
 
 stages:
 
@@ -31,6 +32,10 @@ stages:
         - script: |
             npm install
           displayName: 'npm install'
+
+        - script: |
+            echo "Mi contraseña es: $(DbPassword)"
+          displayName: 'Probar secreto de Key Vault'
 
         - script: |
             npm test
